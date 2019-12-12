@@ -1,6 +1,7 @@
+import time
+
 import pymongo
 import schedule
-import time
 
 from Scraper import *
 

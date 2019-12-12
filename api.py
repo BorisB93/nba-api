@@ -1,11 +1,10 @@
-import flask
-import pymongo
-from flask import json, jsonify, make_response, request
-from flask_cors import CORS
-from bson.objectid import ObjectId
 from datetime import datetime, timedelta
 
-from pip._vendor.pkg_resources import require
+import flask
+import pymongo
+from bson.objectid import ObjectId
+from flask import json, jsonify, make_response, request
+from flask_cors import CORS
 
 
 class JSONEncoder(json.JSONEncoder):  # extend json-encoder class
@@ -29,8 +28,8 @@ collection = pymongo.collection.Collection(db, 'games_collection')
 
 @app.route('/', methods=['GET'])
 def home():
-    return '''<h1>NBA Results</h1>
-<p>A prototype API for displaying NBA results.</p>'''
+    return '''<h1>NBA Scores</h1>
+<p>A prototype API for displaying NBA scores.</p>'''
 
 
 @app.route('/api/games/all', methods=['GET'])  # A route to return all games
@@ -65,7 +64,6 @@ def get_games_from_last_24_hours():
 
     current_date = datetime.now()
     games_in_last_24_hours = []
-
 
     # Check the last 20 entries and return only the relevant games
     for game in db.collection.find({}, {'_id': 0}).sort([('$natural', -1)]).limit(20):
