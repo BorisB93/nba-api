@@ -17,5 +17,9 @@ Make sure you've also installed the frontend! Read the README at:
 ## Run!
 In your preferred CLI, run the scheduled scraping script and the API:
 
-### `python3 scheduledscraper.py`
-### `python3 api.py `
+### `py scheduledscraper.py`
+### `py api.py `
+
+## How about a test?
+In your preferred CLI, run:
+### `py tests/test_scraper.py `
