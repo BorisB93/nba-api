@@ -1,4 +1,7 @@
-from Scraper import *
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))  # Enables running the test from parent dir.
+from Scraper import Scraper
 import unittest
 
 
